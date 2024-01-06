@@ -1,0 +1,186 @@
+<!-- Content-Page -->
+<div id="body">
+    <table id="spacer-table" cellspacing="0">
+        <thead>
+        <tr>
+            <td>
+                <div id="header-spacer"></div>
+            </td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>
+                <div class="logo-client-wrapper">
+                    <img class="company-logo" src="$company.logo" alt="$company.name logo">
+                    <div id="client-details-custom">
+                        <p><font size="1"> $company.custom4 &#10061; $company.address1 &#10061; $company.postal_code $company.city </font></p>
+                        <p> $client.name </p>
+                        <p> $client.address1 </p>
+                        <p> $client.postal_code $client.city </p>
+                        <p> $client.country </p>
+                    </div>
+                    <div id="vendor-details"></div>
+                    <div id="shipping-details"></div>
+                </div>
+                <div class="table-wrapper">
+                    <table id="product-table" cellspacing="0" data-ref="table"></table>
+
+                    <table id="task-table" cellspacing="0" data-ref="table"></table>
+
+                    <table id="delivery-note-table" cellspacing="0" data-ref="table"></table>
+
+                    <table id="statement-invoice-table" cellspacing="0" data-ref="table"></table>
+                    <div id="statement-invoice-table-totals" data-ref="statement-totals"></div>
+
+                    <table id="statement-payment-table" cellspacing="0" data-ref="table"></table>
+                    <div id="statement-payment-table-totals" data-ref="statement-totals"></div>
+                    <table id="statement-credit-table" cellspacing="0" data-ref="table"></table>
+                    <div id="statement-credit-table-totals" data-ref="statement-totals"></div>
+                    <table id="statement-aging-table" cellspacing="0" data-ref="table"></table>
+                    <div id="statement-aging-table-totals" data-ref="statement-totals"></div>
+                </div>
+                <div id="table-totals" cellspacing="0">$status_logo</div>
+            </td>
+        </tr>
+
+        </tbody>
+        <tfoot>
+        <tr>
+            <td>
+                <div id="footer-spacer"></div>
+            </td>
+        </tr>
+        </tfoot>
+    </table>
+</div>
+
+<!-- Invoice-Page -->
+<div class="logo">
+    <img class="company-logo" src="$company.logo" alt="$company.name logo" height="85">
+</div>
+
+<div class="invoice-container">
+    <div class="invoice-section">
+        <p><font size="5"><b> Empfangsschein </b></font></p><br />
+        <p><b><font size="1"> Konto / Zahlbar an </font></b></p>
+        <p> $company.custom1 </p>
+        <p> $company.custom4 </p>
+        <p> $company.address1 </p>
+        <p> $company.postal_code $company.city </p>
+        <br /> <br/>
+
+        <p><b><font size="1"> Zahlbar durch </font></b></p>
+        <p> $client.name </p>
+        <p> $client.address1 </p>
+        <p> $client.postal_code $client.city </p>
+        <br /> <br /><br /><br /><br /><br /><br /><br /><br />
+
+        <table><tr>
+            <td><b> Währung </b></td>
+            <td><b> Betrag </b></td>
+            <td><p style="color: white;">__________</p></td>
+        </tr><tr>
+            <td> $company.custom2 </td>
+            <td> $amount_raw </p></td>
+            <td></td>
+        </tr></table>
+        <br /><br /><br /><br />
+        <p align="right" style="padding-right: 20px;"><font size="2"> Annahmestelle </font></p>
+        <br /><br />
+    </div>
+
+    <div class="invoice-section qr-code-section">
+        <p><font size="5"><b> Zahlteil </b></font></p><br /><br />
+        <div id="qrcode"></div>
+        <br /><br />
+        <table><tr>
+            <td><b> Währung </b></td>
+            <td><b> Betrag </b></td>
+            <td><p style="color: white;">__________</p></td>
+        </tr><tr>
+            <td> $company.custom2 </td>
+            <td> $amount_raw </p></td>
+            <td></td>
+        </tr></table>
+        <br /><br /><br /><br /><br /><br /><br />
+    </div>
+
+    <div class="invoice-section">
+        <p><b> Konto / Zahlbar an </b></p>
+        <p> $company.custom1 </p>
+        <p> $company.custom4 </p>
+        <p> $company.address1 </p>
+        <p> $company.postal_code $company.city </p>
+        <br /> <br/>
+
+        <p><b> Zusätzliche Informationen </b></p>
+        <p> Referenznummer oder sonstiges </p>
+        <br /><br />
+
+
+        <p><b> Zahlbar durch </b></p>
+        <p> $client.name </p>
+        <p> $client.address1 </p>
+        <p> $client.postal_code $client.city </p>
+        <br /> <br/>
+    </div>
+</div>
+
+<script>
+    function generateQRCode(data, size) {
+        var size = size || 200;
+        var errorCorrectionLevel = 'H';
+        var url = 'https://api.qrserver.com/v1/create-qr-code/?data=' + encodeURIComponent(data) + '&size=' + size + 'x' + size + '&ecc=' + errorCorrectionLevel;
+        var qrcodeElement = document.getElementById('qrcode');
+        qrcodeElement.innerHTML = '<img src="' + url + '" alt="QR Code" style="position: relative; max-width: 100%; height: auto;">';
+
+        var imgLogo = new Image();
+        imgLogo.src = 'https://ninja.webmo.ch/swiss.png'; // Use this logo or upload your own
+        imgLogo.alt = 'Logo';
+        imgLogo.style.position = 'absolute';
+        imgLogo.style.top = '50%';
+        imgLogo.style.left = '50%';
+        imgLogo.style.transform = 'translate(-50%, -50%)';
+        imgLogo.style.width = '40px';
+        imgLogo.style.height = 'auto';
+
+        qrcodeElement.appendChild(imgLogo);
+    }
+
+        var swissQrData = [
+            "SPC",                              // Service Tag
+            "0200",                             // Version
+            "1",                                // Coding type (UTF-8)
+            "$company.custom3",                 // IBAN
+            "S",                                // Address type: S=structured (4 elements) or K=combined (2 lines)
+            "$company.custom4",                 // Company/creditor name
+            "$company.address1",                // Company/creditor address (houseno. included)
+            "",                                 // Company/creditor house number
+            "$company.postal_code",             // Company/creditor postal code
+            "$company.city",                    // Company/creditor city
+            "CH",                               // Country code
+            "",                                 // Place for a second address
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "$amount_raw",   		 	        // Amount
+            "CHF",                              // Currency: CHF (hardcoded)
+            "S",                                // Address type: S=structured (4 elements) or K=combined (2 lines)
+            "$client.name",                     // Client/debtor name
+            "",                                 // CLient/debtor IBAN (leave empty)
+            "$client.address1",                 // Client/debtor address
+            "$client.postal_code",              // Client/debtor postal code
+            "$client.city",                     // Client/debtor
+            "CH",                               // Country Code
+            "NON",                              // Reference - leace empty if none
+            "",                                 // Reference number
+            "$company.custom4, RG-Nr.: $number",// Message for company (Company-Name, RG-Nr.: X999)
+            "EPD",                              // Trailer
+        ].join('\n');
+
+        generateQRCode(swissQrData, 256);
+</script>
