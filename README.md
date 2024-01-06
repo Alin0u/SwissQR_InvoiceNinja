@@ -1,7 +1,7 @@
 # SwissQR_NinjaInvoice
 ![GitHub repo size](https://img.shields.io/github/repo-size/Alin0u/SwissQR_NinjaInvoice )
-![GitHub license](https://img.shields.io/github/license/Alin0u/SwissQR_NinjaInvoice )
-![GitHub top language](https://img.shields.io/github/languages/top/SwissQR_NinjaInvoice )
+![GitHub license](https://img.shields.io/github/license/Alin0u/SwissQR_NinjaInvoice)
+![GitHub top language](https://img.shields.io/github/languages/top/Alin0u/SwissQR_NinjaInvoice)
 ![GitHub last commit](https://img.shields.io/github/last-commit/Alin0u/SwissQR_NinjaInvoice )
 
 ## Introduction
