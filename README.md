@@ -35,9 +35,9 @@ Copy the code from 'SwissQR' and add it to your existing invoice design
 
 ## Result
 
-![First Page](https://github.com/Alin0u/SwissQR_NinjaInvoice/img/firstpage.png?raw=true)
+![firstpage.png](img%2Ffirstpage.png)
 
-![Second Page](https://github.com/Alin0u/SwissQR_NinjaInvoice/img/secondpage.png?raw=true)
+![secondpage.png](img%2Fsecondpage.png)
 
 ## Terms of Use 
 [License](LICENSE)
