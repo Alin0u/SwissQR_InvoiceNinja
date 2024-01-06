@@ -31,7 +31,8 @@ Copy the code from 'SwissQR' and add it to your existing invoice design
 
 ## Author
 
-@[Webmo](https://webmo.ch)
+- [@Alin0u](https://www.github.com/alin0u)
+- [@Webmo](https://webmo.ch)
 
 ## Result
 
