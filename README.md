@@ -1,7 +1,7 @@
 # SwissQR_NinjaInvoice
-![GitHub repo size](https://img.shields.io/github/repo-size/Alin0u/SwissQR_NinjaInvoice )
-![GitHub top language](https://img.shields.io/github/languages/top/Alin0u/SwissQR_NinjaInvoice)
-![GitHub last commit](https://img.shields.io/github/last-commit/Alin0u/SwissQR_NinjaInvoice )
+![GitHub repo size](https://img.shields.io/github/repo-size/Alin0u/SwissQR_InvoiceNinja)
+![GitHub top language](https://img.shields.io/github/languages/top/Alin0u/SwissQR_InvoiceNinja)
+![GitHub last commit](https://img.shields.io/github/last-commit/Alin0u/SwissQR_InvoiceNinja)
 
 ## Introduction
 I found myself facing the problem of the creation of a Swiss QR code for 
